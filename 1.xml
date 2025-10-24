@@ -29,16 +29,16 @@ const canFullscreen = (function () {
     return false; 
 }()); 
 
-// ** NEW DELAY LOGIC **
+// ** DELAY LOGIC UPDATED TO 10 SECONDS (10000ms) **
 function delayGameStart() {
-    // Wait for 5000 milliseconds (5 seconds) before showing the loading screen
+    // Wait for 10000 milliseconds (10 seconds) before showing the loading screen
     setTimeout(() => {
         // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта. 
         loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/papamamia/qarama@main/background.png') center / cover"; 
-        loadingCover.style.display = ""; // THIS LINE NOW FIRES AFTER THE DELAY
-    }, 5000); 
+        loadingCover.style.display = ""; 
+    }, 10000); 
 }
-// ** END NEW DELAY LOGIC **
+// ** END DELAY LOGIC **
 
 document.addEventListener('contextmenu', event => event.preventDefault()); 
 function FocusGame() { window.focus(); canvas.focus(); } 
